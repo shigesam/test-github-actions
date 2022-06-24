@@ -9,7 +9,7 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.event.inputs.env == 'prd' }}
+    if: ${{ github.event.inputs.env == 'prd' &&  startsWith(github.ref_name, 'release-') }}
     uses: ./.github/workflows/cd.yml
     with:
       env: prd
