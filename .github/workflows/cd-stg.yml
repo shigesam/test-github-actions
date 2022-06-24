@@ -1,0 +1,17 @@
+name: CD-stg
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'To deploy to stg, type "stg"'
+        required: true
+
+jobs:
+  deploy:
+    if: ${{ github.event.inputs.env == 'stg' }}
+    uses: ./.github/workflows/cd.yml
+    with:
+      env: stg
+      account_id: 111111111111
+

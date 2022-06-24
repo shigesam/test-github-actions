@@ -1,0 +1,17 @@
+name: CD-prd
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'To deploy to prd, type "prd"'
+        required: true
+
+jobs:
+  deploy:
+    if: ${{ github.event.inputs.env == 'prd' }}
+    uses: ./.github/workflows/cd.yml
+    with:
+      env: prd
+      account_id: 222222222222
+
