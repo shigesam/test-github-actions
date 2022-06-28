@@ -13,5 +13,5 @@ jobs:
     uses: ./.github/workflows/cd.yml
     with:
       env: stg
-      account_id: 111111111111
+      account_id: '111111111111'
 

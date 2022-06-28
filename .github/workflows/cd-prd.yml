@@ -13,5 +13,5 @@ jobs:
     uses: ./.github/workflows/cd.yml
     with:
       env: prd
-      account_id: 222222222222
+      account_id: "222222222222"
 
