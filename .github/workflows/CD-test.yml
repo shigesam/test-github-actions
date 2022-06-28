@@ -1,0 +1,17 @@
+name: CD-test
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'To deploy to test, type "test"'
+        required: true
+
+jobs:
+  deploy:
+    if: ${{ github.event.inputs.env == 'test' }}
+    uses: ./.github/workflows/cd.yml
+    with:
+      env: test
+      account_id: 000000000000
+
